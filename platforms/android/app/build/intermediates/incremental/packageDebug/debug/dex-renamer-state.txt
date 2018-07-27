@@ -1,0 +1,4 @@
+#Thu Apr 19 19:31:24 CEST 2018
+base.0=/Users/jonastorfs/Documents/Projecten/co-house/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+file.0=/Users/jonastorfs/Documents/Projecten/co-house/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex

@@ -1,0 +1,32 @@
+<ion-header>
+        <ion-navbar>
+            <ion-title>
+                 toevoegen
+            </ion-title>
+        </ion-navbar>
+    </ion-header>
+    
+    <ion-content padding>
+    
+      
+            <ion-slides class="imageSlider"  pager>
+                <ion-slide [(ngModel)]="imagePaths" *ngFor="let imagePath of imagePaths | async">
+                        <img class="img_card" src="{{imagePath}}" />
+                </ion-slide>
+                    <ion-slide (click)="addImages()">
+                            <ion-icon (click)="addImages()" name="add"></ion-icon>
+                            <p (click)="addImages()">Voeg foto's toe van uw woning</p>
+                        </ion-slide>
+            </ion-slides>
+
+            <p>TEST </p>
+            <ion-slides class="imageSlider"  pager>
+                    <ion-slide [(ngModel)]="imageTests" *ngFor="let imageTest of imageTests | async">
+                            <img class="img_card" src="{{imageTests}}" />
+                    </ion-slide>
+                        <ion-slide (click)="addImages()">
+                                <ion-icon (click)="addImages()" name="add"></ion-icon>
+                                <p (click)="addImages()">Voeg foto's toe van uw woning</p>
+                            </ion-slide>
+                </ion-slides>
+    </ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Betaling</ion-title>
+      <ion-buttons right>
+        <button class="add" (click)="add()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ul>
+      <li *ngFor="let province of provinces | async">
+        <h3 text-wrap> Woningen in {{ province.name_nl }} </h3>
+        <ion-scroll scrollX="true">
+          <div class="house" *ngFor="let house of houses | async">
+            <ion-card class="homeCard" (click)="navigateToHouseDetail(house)" *ngIf="province.name_nl ==  house.province">
+              <img [src]="imagePath" />
+              <ion-card-content>
+                <ion-card-title text-wrap class="houseName">
+                  {{house.name}}
+                </ion-card-title>
+                <p text-wrap class="price">
+                  € {{house.price_month}} per maand
+                </p>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-scroll>
+      </li>
+    </ul>
+  
+  
+  </ion-content>

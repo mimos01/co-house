@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title (click)="navigateHome()">CO-HOUSE</ion-title>
+        <ion-buttons right>
+          <button class="add" (click)="add()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+          <button class="addWebsite" (click)="add()">
+           <h5>ADD NEW HOUSE</h5>
+            </button>
+        </ion-buttons>
+      </ion-navbar>
+</ion-header>
+
+<ion-content padding class="overviewAccounnt" style="background-image:url('assets/imgs/background.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+  <ion-grid>
+    <div>
+    
+        <ion-row>
+            <ion-col col-1></ion-col>
+            <ion-col col-10>
+              <img class="logo" src="assets/imgs/co-house-logo.png">
+            </ion-col>
+            <ion-col col-1></ion-col>
+          </ion-row>
+  
+      <ion-list class="list-form houseButtons" style="margin-bottom: 30px">
+  
+                <button class="socialLogin" ion-button block round color="danger" (click)="addCoHouse()">
+                       Woning toevoegen
+                      </button>
+                <button class="socialLogin" ion-button block round color="danger" (click)="myHouses()">
+                       Mijn woningen
+                      </button>
+      
+      </ion-list>
+  
+      <button class="loginButton" color="primary" ion-button block round (click)="logout()">Afmelden</button>
+      <button class="deleteAccount" ion-button round style="margin-top:20px;height: 35px;font-size: 14px;" block (click)="alertDelete()">Account verwijderen</button>
+  
+    </div>
+  </ion-grid>
+  </ion-content>

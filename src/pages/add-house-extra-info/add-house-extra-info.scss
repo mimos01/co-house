@@ -1,0 +1,133 @@
+.labelDescription {
+    clear: both;
+}
+
+.imageSlider {
+    height: 40vh !important;
+    max-width: 95%;
+}
+
+.button-layout {
+    margin-top: 4% !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+
+ion-textarea {
+   margin-left:auto;
+   margin-right:auto;
+   max-width:95% !important;
+}
+
+.img_card {
+    width:100% !important;
+    height: 100% !important;
+}
+
+ion-content {
+    ion-textarea {
+        -webkit-box-shadow: 2px 2px 4px 5px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+        -moz-box-shadow:    2px 2px 4px 5px #ccc;  /* Firefox 3.5 - 3.6 */
+        box-shadow:         2px 2px 4px 5px #ccc;  
+    }
+
+   
+}
+
+ion-item  {
+    .number_of_residentsLabel{
+    border: none; 
+    font-size: inherit !important;
+}
+}
+
+.dropzone { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    height: 300px;
+    border: 2px dashed #f16624;
+    border-radius: 5px;
+    background: white;
+    margin: 10px 0;
+
+    &.hovering {
+        border: 2px solid #f16624;
+        color: #dadada !important;
+    }
+}
+
+progress::-webkit-progress-value {
+    transition: width 0.1s ease;
+}
+
+/*input, .discountCodeInput { 
+    text-transform: uppercase;
+}*/
+::-webkit-input-placeholder { /* WebKit browsers */
+    text-transform: none;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    text-transform: none;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    text-transform: none;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    text-transform: none;
+}
+::placeholder { /* Recent browsers */
+    text-transform: none;
+}
+
+
+.discountCodeLabel{
+    color: #FE3562;
+    width: 25vh;
+    margin: auto;
+}
+
+.discountCodeNotOK{
+    color: #FE3562;
+    width: 25vh;
+    margin: auto;
+}
+
+.discountCodeOK {
+    color:#4cd964;
+    width:25vh;
+    margin:auto;
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+   .imageSlider {
+       display: none;
+   }
+
+   .addHouseButton {
+       display:none;
+   }
+
+   .addHouse {
+    padding-left:30vh !important;
+    padding-right:30vh !important;
+    width:100% !important;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, lg)) {
+        .dropzone {
+            display: none;
+        }
+
+        .addHouseButtonWeb {
+            display: none;
+        }
+
+}
+
+

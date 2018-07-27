@@ -1,0 +1,85 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@font-face{
+    font-family: 'Playfair Display';
+    src: url('../assets/fonts/playfair_display_latin.woff2') format('woff2');
+    }
+     
+    *{
+    font-family: 'Playfair Display';
+    }
+
+//Hide scrollbar when using horizontal / vertical scroll
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar {
+      display: none;
+    }
+
+.toolbar-title.toolbar-title-md, 
+.toolbar-title.toolbar-title-ios, 
+.toolbar-title.toolbar-title-wp { color: map-get($colors, primary); }
+
+.toolbar-buttons.toolbar-buttons-md,
+.toolbar-buttons.toolbar-buttons-wp,
+.toolbar-buttons.toolbar-buttons-ios { color: map-get($colors, primary); }
+
+.bar-button.bar-button-ios-primary, .bar-button.bar-button-md-primary { color: map-get($colors, primary) !important; }
+
+
+ion-navbar { color: map-get($colors, primary); }
+
+    // Desktop
+ion-header .toolbar {
+    margin: auto;
+   }
+   
+   @media (min-width: map-get($grid-breakpoints, lg)) {
+    ion-navbar.toolbar,
+    ion-header .toolbar[fixed],
+    ion-footer .toolbar[fixed],
+    ion-tabs .tabbar {
+      margin: 0;
+      padding-right: calc((100% - #{map-get($grid-max-widths, lg)}) / 2);
+      padding-left: calc((100% - #{map-get($grid-max-widths, lg)}) / 2);
+    }
+   }
+
+.addWebsite {
+    color: #FE3562;
+    background-color: inherit !important;
+}
+
+.add {
+    color: #FE3562;
+    background-color: inherit !important;
+    border:none;
+    font-size: 18px;
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+    .add {
+        display: none;
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, lg)) {
+
+.addWebsite {
+    display: none;
+}
+}

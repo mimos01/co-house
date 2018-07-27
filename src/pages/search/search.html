@@ -1,0 +1,127 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title (click)="navigateHome()">CO-HOUSE</ion-title>
+        <ion-buttons right>
+          <button class="add" (click)="add()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+          <button class="addWebsite" (click)="add()">
+           <h5>ADD NEW HOUSE</h5>
+            </button>
+        </ion-buttons>
+      </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- <div  *ngIf="showSearchBar"> -->
+
+<ion-grid class="searchContainer">
+  <div [@myvisibility]="visibleStateSearchbar">
+
+    <ion-item>
+      <ion-label>Stad</ion-label>
+      <ion-select [(ngModel)]="selectCity" multiple="false" placeholder="Geen steden gevonden.">
+        <ion-option *ngFor="let city of cities | async" [value]="city.name_nl">{{city.name_nl}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-segment [(ngModel)]="icons" color="primary" class="segment">
+      <ion-segment-button value="male_only">
+        <ion-icon name="man"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="female_only">
+        <ion-icon name="woman"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button isActive="true" value="male_female">
+        <ion-icon name="man"></ion-icon>
+        <ion-icon name="woman"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-item>
+      <ion-label>Tuin</ion-label>
+      <ion-select [(ngModel)]="garden" multiple="false">
+        <ion-option value="true">Met tuin</ion-option>
+        <ion-option value="not_true">Zonder tuin</ion-option>
+        <ion-option value="undefined">Niet belangrijk</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Huisdieren toegelaten</ion-label>
+      <ion-select [(ngModel)]="pets_allowed" multiple="false">
+        <ion-option [value]="true">Toegelaten</ion-option>
+        <ion-option [value]="not_true">Niet toegelaten</ion-option>
+        <ion-option [value]="undefined">Niet belangrijk</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Kamer bemeubeld</ion-label>
+      <ion-select [(ngModel)]="room_furnished" multiple="false">
+        <ion-option [value]="true">Bemeubeld</ion-option>
+        <ion-option [value]="not_true">Niet bemeumeld</ion-option>
+        <ion-option [value]="undefined">Niet belangrijk</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Rokers toegelaten</ion-label>
+      <ion-toggle [(ngModel)]="smokers"></ion-toggle>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Leeftijd </ion-label>
+      <ion-input [(ngModel)]="age_from" type="number" placeholder="Van"></ion-input>
+      <ion-input [(ngModel)]="age_to" type="number" placeholder="Tot"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Max prijs per maand</ion-label>
+      <ion-input [(ngModel)]="max_price" type="number" placeholder="prijs"></ion-input>
+    </ion-item>
+
+    <div text-center class="button-layout">
+      <button ion-button color="primary" class="searchButton" outline round (click)="serchCoHouses()">Zoek co-houses </button>
+    </div>
+  </div>
+
+</ion-grid>
+
+  <!--<div *ngIf="!showSearchBar">-->
+  <div [@myvisibility]="visibleStateButton">
+    <div text-center class="button-layout">
+      <button ion-button color="primary" class="searchButton" outline round (click)="searchAgain()"> Opnieuw zoeken </button>
+    </div>
+
+    <div *ngIf="houses">
+      <div class="house" *ngFor="let house of houses">
+        <ion-card (click)="navigateToHouseDetail(house)">
+          <img src="../../assets/imgs/house_test_1.jpeg" />
+          <ion-card-content>
+            <ion-card-title text-wrap class="houseName">
+              {{house.name}}
+            </ion-card-title>
+            <p text-wrap class="price">
+              € {{house.price_month}} per maand
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+    <div *ngIf="!houses">
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title text-wrap class="houseName">
+          Geen woning gevonden
+        </ion-card-title>
+        <p text-wrap class="price">
+          We konden geen woning vinden voor uw huidige selectie, probeer opnieuw te zoeken.
+        </p>
+      </ion-card-content>
+    </ion-card>
+</div>  
+  </div>
+</ion-content>

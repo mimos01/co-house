@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title (click)="navigateHome()">CO-HOUSE</ion-title>
+        <ion-buttons right>
+            <button class="add" (click)="add()">
+                <ion-icon name="add"></ion-icon>
+            </button>
+            <button class="addWebsite" (click)="add()">
+                <h5>ADD NEW HOUSE</h5>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="addHouse">
+        <ion-slides class="imageSlider" pager>
+            <ion-slide [(ngModel)]="imagePaths" *ngFor="let imagePath of imagePaths">
+                <img class="img_card" src="data:image/jpg;base64,{{imagePath}}" />
+            </ion-slide>
+            <ion-slide (click)="addImages()">
+                <ion-icon name="add"></ion-icon>
+                <p>Voeg foto's toe van uw woning</p>
+            </ion-slide>
+        </ion-slides>
+
+        <div class="dropzone" 
+     dropZone
+     (hovered)="toggleHover($event)"
+     (dropped)="startUpload($event)"
+     [class.hovering]="isHovering">
+
+     <h3>Voeg afbeeldingen toe van uw woning</h3>
+
+     <div class="file">
+        <label class="file-label">
+        <input class="file-input" multiple type="file" placeholder=" "(change)="fileChangeEvent($event)">
+        </label>
+      </div>
+</div>
+
+        <ion-label class="labelName">Geeft een korte titel voor de woning*</ion-label>
+        <ion-textarea maxLength=70 rows="2" class="nameDescription" [(ngModel)]="nameDescription" placeholder="Kamer te huur in gerenoveerd herenhuis. (max 70 karakters)"></ion-textarea>
+
+        <ion-label class="labelDescription">Geeft hier een beschrijving van de woning*</ion-label>
+        <ion-textarea rows="5" class="houseDescription" [(ngModel)]="houseDescription" placeholder="Geef een beschrijving van de woning"></ion-textarea>
+
+        <ion-label class="labelDescriptionResidents">Geeft hier een beschrijving van de inwoners</ion-label>
+        <ion-textarea rows="5" class="residentsDescription" [(ngModel)]="residentsDescription" placeholder="Geef een korte beschrijving van de huidige inwoners"></ion-textarea>
+
+        <ion-item>
+            <ion-label class="number_of_residentsLabel">Aantal inwoners:</ion-label>
+            <ion-input [(ngModel)]="number_of_residents" type="number" placeholder="Aantal inwoners"></ion-input>
+        </ion-item>
+
+
+        <ion-input text-center class="discountCodeInput" [(ngModel)]="discount_code"  (ngModelChange)="discount_code = $event.toLocaleUpperCase()"
+            size="30" maxlength="30" placeholder="Kortingsscode ingeven"></ion-input>
+        <ion-label text-center (click)="verifyDiscount()" class="discountCodeLabel">Code controleren</ion-label>
+        <ion-label placeholder='' name='Discount not ok' text-center class="discountCodeNotOK">{{discountCodeNotOK}}</ion-label>
+        <ion-label placeholder='' name='Discount code ok ' text-center class="discountCodeOK">{{discountCodeOK}}</ion-label>
+
+        <div text-center class="button-layout">
+            <button ion-button color="primary" class="addHouseButton" outline round (click)="addCouHouse()">Bevestigen</button>
+        </div>
+
+        <div text-center class="button-layout">
+            <button ion-button color="primary" class="addHouseButtonWeb" outline round  (click)="checkPaymentWeb()">Bevestigen</button>
+        </div>
+
+        <ion-label text-wrap placeholder='' name='Price for adding new house' text-center class="priceLabel">Een nieuwe woning toevoegen kost {{price}} € en uw woning zal 3 maanden beschikbaar zijn.</ion-label>
+    </div>
+</ion-content>

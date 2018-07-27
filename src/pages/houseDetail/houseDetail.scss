@@ -1,0 +1,42 @@
+.card-detail {
+    height: inherit !important;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.city-name {
+    font-weight: bold;
+    padding:2% 0 2% 0;
+}
+
+h2,h3 {
+    padding-top: 2%;
+}
+
+
+.extra-info {
+    color: darkgray;
+    font-weight: bold;
+}
+
+.email {
+    padding-bottom:1%;
+}
+
+.adress {
+    padding-bottom: 4%;
+}   
+
+.add {
+    border:none;
+    background-color:inherit !important;
+    font-size: 18px;
+}
+
+.imageSliderHouse2 {
+    height: 50vh;
+    object-fit: contain;
+    max-width: 100%;;
+}

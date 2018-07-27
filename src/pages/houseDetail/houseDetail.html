@@ -1,0 +1,68 @@
+<ion-header>
+        <ion-navbar>
+                <ion-title (click)="navigateHome()">CO-HOUSE</ion-title>
+                <ion-buttons right>
+                  <button class="add" (click)="add()">
+                    <ion-icon name="add"></ion-icon>
+                  </button>
+                  <button class="addWebsite" (click)="add()">
+                   <h5>ADD NEW HOUSE</h5>
+                    </button>
+                </ion-buttons>
+              </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="card-detail" *ngFor='let house of houses | async'>
+        <ion-slides class="imageSliderHouse2" pager>
+            <ion-slide *ngFor="let image of house.images2">
+                <img  class="img_card" [src]="image.downloadUrl" />
+            </ion-slide>
+          </ion-slides>
+        <ion-card-content>
+            <ion-card-title>
+                {{house.name}}
+            </ion-card-title>
+            <p class="email">
+                Contacteer eigenaar: <a href="mailto:{{house.email}}"> {{house.email}} </a>
+                </p>
+            <p class="price">
+                € {{house.price_month}} per maand
+            </p>
+            <p class="city-name">
+                Gelegen in: {{house.city}} , {{house.street}}
+            </p>
+           <!-- <p class="adress" text-wrap>
+                {{house.street}}
+            </p>-->
+            <h3>Omschrijving woonst</h3>
+            <p class="houseDescription">
+                {{house.description}}
+            </p>
+
+            <h3>Info over de bewoners</h3>
+            <p>
+                {{house.residents}}
+            </p>
+
+            <h3>
+                Extra info
+            </h3>
+            <ul text-wrap class="extra-info">
+                <li *ngIf="house.garden"> Woning met tuin</li>
+                
+                <li *ngIf="house.only_female"> Alleen vrouwen gezocht</li>
+                <li *ngIf="house.only_male"> Alleen mannen gezocht</li>
+                
+                <li> Gezochte leeftijd: {{house.age_from}} tot {{house.age_to}} jaar</li>
+                <li> Aantal inwoners: {{house.number_of_residents}}</li>
+                
+                <li *ngIf="!house.pets_allowed">Geen huisdieren toegelaten </li>
+                <li *ngIf="house.pets_allowed">Huisdieren toegelaten </li>
+                
+                <li *ngIf="!house.smoker_allowed">Niet rokers gezocht</li>
+
+            </ul>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

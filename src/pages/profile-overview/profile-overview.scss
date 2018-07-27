@@ -1,0 +1,21 @@
+.list-form {
+ //   margin-top: 10vh;
+}
+
+.logo {
+    margin-top: 10vh;   
+    display: block !important;
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+    .socialLogin, .loginButton, .deleteAccount {
+        max-width: 50vh !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, lg)) {
+
+
+}

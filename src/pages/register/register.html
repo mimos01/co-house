@@ -1,0 +1,41 @@
+<ion-content padding class="login" style="background-image:url('../../assets/imgs/background.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2></ion-col>
+          <ion-col col-10 style="margin-left: auto;margin-right: auto;display: block;">
+            <img class="logo" src="../../assets/imgs/co-house-logo.png">
+          </ion-col>
+          <ion-col col-2></ion-col>
+        </ion-row>
+      </ion-grid>
+  
+      <ion-list class="list-form" style="margin-bottom: 30px">
+  
+        <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 14px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+          <ion-input [(ngModel)]="username" style="color: #9C9495 ;border-bottom-color: #9C9495 ;box-shadow:none;" type="email" placeholder="E-mail"></ion-input>
+        </ion-item>
+        <ion-item style="padding:0px !important; font-size: 14px;margin-top:10px;background:none;border-bottom:1px solid  #9C9495 ;box-shadow:none;">
+          <ion-input [(ngModel)]="password" style="color: #9C9495 ;border-bottom-color: #9C9495  #9C9495 ;box-shadow:none;" type="password"
+            placeholder="Password"></ion-input>
+        </ion-item>
+  
+      </ion-list>
+  
+      <button class="loginButton" color="primary" ion-button block round (click)="login()">Login</button>
+      <button ion-button round style="margin-top:20px;height: 35px;font-size: 14px;" block (click)="signUp()">Registreren</button>
+  
+      <button class="socialLogin" ion-button block round color="danger" (click)="loginUserWithGoogle()">
+          <ion-icon name="logo-googleplus"></ion-icon>
+          Login with Google
+        </button>
+  
+        <button ion-button block round color="facebook" (click)="loginUserWitFacebook()">
+          <ion-icon name="logo-facebook"></ion-icon>
+          Login with Facebook
+        </button>
+      
+    </div>
+
+    </ion-content>

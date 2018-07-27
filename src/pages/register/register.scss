@@ -1,0 +1,35 @@
+.profile {
+    background-color: #E7A07F;
+   }
+   
+   .loginButton {
+    margin-top: 15px;
+    height: 35px;font-size: 14px;
+   }
+   
+   .logo {
+       margin-left: auto;
+       margin-right: auto;
+   }
+
+   ion-grid {
+        max-height: 20vh !important;
+   }
+   .logo>img{
+       min-height: 100vh !important;
+   }
+
+   .socialLogin {
+       margin-top:5%;
+   }
+   
+   ::-webkit-input-placeholder {
+       color: #9c9495  !important; 
+     }
+     :-moz-placeholder {
+       color: #9c9495  !important; 
+     }
+     :-ms-input-placeholder {
+       /* IE10+ */
+       color: #9c9495  !important; 
+     }

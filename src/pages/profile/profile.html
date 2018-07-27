@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title (click)="navigateHome()">CO-HOUSE</ion-title>
+    <ion-buttons right>
+      <button class="add" (click)="add()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <button class="addWebsite" (click)="add()">
+        <h5>ADD NEW HOUSE</h5>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="login" style="background-image:url('assets/imgs/background.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+  <ion-grid>
+    <div *ngIf="showLogin">
+
+      <ion-row>
+        <ion-col col-2></ion-col>
+        <ion-col col-10 style="margin-left: auto;margin-right: auto;display: block;">
+          <img class="logo" src="assets/imgs/co-house-logo.png">
+        </ion-col>
+        <ion-col col-2></ion-col>
+      </ion-row>
+
+
+      <ion-list class="list-form" style="margin-bottom: 30px">
+
+        <ion-item class="emailTxt" style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 14px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+          <ion-input [(ngModel)]="username" style="color: #9C9495 ;border-bottom-color: #9C9495 ;box-shadow:none;" type="email" placeholder="E-mail"></ion-input>
+        </ion-item>
+        <ion-item class="passwordTxt" style="padding:0px !important; font-size: 14px;margin-top:10px;background:none;border-bottom:1px solid  #9C9495 ;box-shadow:none;">
+          <ion-input [(ngModel)]="password" style="color: #9C9495 ;border-bottom-color: #9C9495  #9C9495 ;box-shadow:none;" type="password"
+            placeholder="Password"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <button class="loginButton" color="primary" ion-button block round (click)="login()">Login</button>
+      <button class="registerButton" ion-button round style="margin-top:20px;height: 35px;font-size: 14px;" block (click)="signUp()">Registreren</button>
+
+      <div class="forgotPassword" text-center style="text-decoration: underline;margin-top:20px;color: #9C9495 ;font-size: 14px;"
+        (click)="forgotPwd()">Forgot Password</div>
+
+
+      <button class="socialLogin" ion-button block round color="danger" (click)="loginUserWithGoogle()">
+        <ion-icon name="logo-googleplus"></ion-icon>
+        Login with Google
+      </button>
+
+      <button class="socialLoginFB" ion-button block round color="facebook" (click)="loginUserWitFacebook()">
+        <ion-icon name="logo-facebook"></ion-icon>
+        Login with Facebook
+      </button>
+      <ion-label class="info" text-wrap>Login of maak een account aan om een woning toe te voegen.</ion-label>
+    </div>
+  </ion-grid>
+</ion-content>
