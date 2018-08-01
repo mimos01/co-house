@@ -10,7 +10,7 @@ webpackJsonp([0],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_overview_profile_overview__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_overview_profile_overview__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_service_user_service__ = __webpack_require__(85);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -276,7 +276,7 @@ var HouseDetailPage = /** @class */ (function () {
     };
     HouseDetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'detail-page',template:/*ion-inline-start:"/Users/jonastorfs/Documents/Projecten/co-house-pwa/src/pages/houseDetail/houseDetail.html"*/'<ion-header>\n        <ion-navbar>\n                <ion-title (click)="navigateHome()">CO-HOUSE</ion-title>\n                <ion-buttons right>\n                  <button class="add" (click)="add()">\n                    <ion-icon name="add"></ion-icon>\n                  </button>\n                  <button class="addWebsite" (click)="add()">\n                   <h5>ADD NEW HOUSE</h5>\n                    </button>\n                </ion-buttons>\n              </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-card class="card-detail" *ngFor=\'let house of houses | async\'>\n        <ion-slides class="imageSliderHouse2" pager>\n            <ion-slide *ngFor="let image of house.images2">\n                <img  class="img_card" [src]="image.downloadUrl" />\n            </ion-slide>\n          </ion-slides>\n        <ion-card-content>\n            <ion-card-title>\n                {{house.name}}\n            </ion-card-title>\n            <p class="email">\n                Contacteer eigenaar: <a href="mailto:{{house.email}}"> {{house.email}} </a>\n                </p>\n            <p class="price">\n                € {{house.price_month}} per maand\n            </p>\n            <p class="city-name">\n                Gelegen in: {{house.city}} , {{house.street}}\n            </p>\n           <!-- <p class="adress" text-wrap>\n                {{house.street}}\n            </p>-->\n            <h3>Omschrijving woonst</h3>\n            <p class="houseDescription">\n                {{house.description}}\n            </p>\n\n            <h3>Info over de bewoners</h3>\n            <p>\n                {{house.residents}}\n            </p>\n\n            <h3>\n                Extra info\n            </h3>\n            <ul text-wrap class="extra-info">\n                <li *ngIf="house.garden"> Woning met tuin</li>\n                \n                <li *ngIf="house.only_female"> Alleen vrouwen gezocht</li>\n                <li *ngIf="house.only_male"> Alleen mannen gezocht</li>\n                \n                <li> Gezochte leeftijd: {{house.age_from}} tot {{house.age_to}} jaar</li>\n                <li> Aantal inwoners: {{house.number_of_residents}}</li>\n                \n                <li *ngIf="!house.pets_allowed">Geen huisdieren toegelaten </li>\n                <li *ngIf="house.pets_allowed">Huisdieren toegelaten </li>\n                \n                <li *ngIf="!house.smoker_allowed">Niet rokers gezocht</li>\n\n            </ul>\n        </ion-card-content>\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/jonastorfs/Documents/Projecten/co-house-pwa/src/pages/houseDetail/houseDetail.html"*/
+            selector: 'detail-page',template:/*ion-inline-start:"/Users/jonastorfs/Documents/Projecten/co-house-pwa/src/pages/houseDetail/houseDetail.html"*/'<ion-header>\n        <ion-navbar>\n                <ion-title (click)="navigateHome()">CO-HOUSE</ion-title>\n                <ion-buttons right>\n                  <button class="add" (click)="add()">\n                    <ion-icon name="add"></ion-icon>\n                  </button>\n                  <button class="addWebsite" (click)="add()">\n                   <h5>ADD NEW HOUSE</h5>\n                    </button>\n                </ion-buttons>\n              </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-card class="card-detail" *ngFor=\'let house of houses | async\'>\n        <ion-slides class="imageSliderHouse2" pager>\n            <ion-slide *ngFor="let image of house.images2">\n                <img  class="img_card" [src]="image.downloadUrl" />\n            </ion-slide>\n          </ion-slides>\n        <ion-card-content>\n            <ion-card-title>\n                {{house.name}}\n            </ion-card-title>\n            <p class="email">\n                Contacteer eigenaar: <a href="mailto:{{house.email}}"> {{house.email}} </a>\n                </p>\n            <p class="price">\n                € {{house.price_month}} per maand\n            </p>\n            <p class="city-name">\n                Gelegen in: {{house.city}} , {{house.street}}\n            </p>\n           <!-- <p class="adress" text-wrap>\n                {{house.street}}\n            </p>-->\n            <h3>Omschrijving woonst</h3>\n            <p class="houseDescription">\n                {{house.description}}\n            </p>\n\n            <h3>Info over de bewoners</h3>\n            <p>\n                {{house.residents}}\n            </p>\n\n            <h3>\n                Extra info\n            </h3>\n            <ul text-wrap class="extra-info">\n                <li *ngIf="house.garden"> Woning met tuin</li>\n                \n                <li *ngIf="house.icons == \'female_only\'"> Alleen vrouwen gezocht</li>\n                <li *ngIf="house.icons == \'male_only\'"> Alleen mannen gezocht</li>\n                \n                <li> Gezochte leeftijd: {{house.age_from}} tot {{house.age_to}} jaar</li>\n                <li> Aantal inwoners: {{house.number_of_residents}}</li>\n                \n                <li *ngIf="!house.pets_allowed">Geen huisdieren toegelaten </li>\n                <li *ngIf="house.pets_allowed">Huisdieren toegelaten </li>\n                \n                <li *ngIf="!house.smoker_allowed">Niet rokers gezocht</li>\n\n            </ul>\n        </ion-card-content>\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/jonastorfs/Documents/Projecten/co-house-pwa/src/pages/houseDetail/houseDetail.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */]])
     ], HouseDetailPage);
@@ -329,7 +329,7 @@ webpackEmptyAsyncContext.id = 255;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__search_search__ = __webpack_require__(299);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile_profile__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(23);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -380,8 +380,7 @@ var TabsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_animations__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase_app__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase_app__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_service_search_house__ = __webpack_require__(321);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -405,7 +404,8 @@ var Garden = /** @class */ (function () {
 }());
 
 var SearchPage = /** @class */ (function () {
-    function SearchPage(navCtrl, afs, alertCtrl, app) {
+    function SearchPage(searchHouse, navCtrl, afs, alertCtrl, app) {
+        this.searchHouse = searchHouse;
         this.navCtrl = navCtrl;
         this.afs = afs;
         this.alertCtrl = alertCtrl;
@@ -488,70 +488,40 @@ var SearchPage = /** @class */ (function () {
                     }
                     console.log('Pets allowed:' + this.pets_allowedResult);
             }
-            var myArray = [];
-            var whereString;
-            // var query = firebase.firestore().collection('houses') as CollectionReference;
-            if (this.gardenResult == true || this.gardenResult == false) {
-                myArray.push('"garden", "==", ' + this.gardenResult);
-                //  query = query.where('garden', '==', true)
-            }
-            if (this.room_furnishedResult == true || this.room_furnishedResult == false) {
-                myArray.push('"room_furnished", "==", ' + this.room_furnishedResult);
-            }
-            if (this.pets_allowedResult == true || this.pets_allowedResult == false) {
-                myArray.push('"pets_allowed", "==", ' + this.pets_allowedResult);
-            }
-            for (var i = 0; i <= myArray.length; i++) {
-                whereString = whereString + ".where(myArray[i])";
-            }
-            var query = (__WEBPACK_IMPORTED_MODULE_4_firebase_app__["firestore"]().collection('houses') + whereString);
-            console.log('Firebase collection string: ' + __WEBPACK_IMPORTED_MODULE_4_firebase_app__["firestore"]().collection('houses') + whereString);
-            console.log('query: ' + query);
-            query.where('', '==', '');
-            console.log('query:  ' + query);
-            /*  query.get().then(querySnapshot => {
-                this.houses = querySnapshot
-              });*/
-            this.visibleStateButton = "visible";
-            this.visibleStateSearchbar = "invisible";
-            // this.itemsCollectionHouse = this.afs.collection<House>('houses', ref => ref.where('garden','==', true));
-            // this.houses = this.itemsCollectionHouse.valueChanges();
-            console.log('houses: ' + this.houses);
-            //console.log('houses : ' + this.houses)
-            //this.houses = this.itemsCollectionHouse.valueChanges();
-            /*  this.itemsCollectionH ouse = this.afs.collection<House>('houses', ref => ref
-              .orderBy('name'));
-        
-              this.houses = this.itemsCollectionHouse.valueChanges();*/
-            /* if (this.gardenResult == undefined && this.room_furnishedResult == undefined && this.pets_allowedResult == undefined) {
-               this.itemsCollectionHouse = this.afs.collection<House>('houses', ref => ref.where('garden', '==', true)
-                 .where('garden', '==', false)
-                 .where('room_furnished', '==', true)
-                 .where('room_furnished', '==', false)
-                 .where('pets_allowed', '==', true)
-                 .where('pets_allowed', '==', false)
-                 .orderBy('name'));
-               this.houses = this.itemsCollectionHouse.valueChanges();
-       
-               console.log("Query for undefined");
-       
-               this.visibleStateButton = "visible";
-               this.visibleStateSearchbar = "invisible";
-             }*/
-            //Als query volledig werkt, subscribe op resultaat om te zien of er iets terug gekomen is of niet!!! 
-            //Anders in UI melding geven dat er geen woning is gevonden. 
-            /* if (this.gardenResult === true || this.gardenResult === false && this.room_furnishedResult === true || this.room_furnishedResult === false
-               && this.pets_allowedResult === true || this.pets_allowedResult === false && this.smokers === true || this.smokers === false) {
-               this.garden = '';
-               console.log('Query house ');
-               //this.showSearchBar = false;
-               this.visibleStateButton = "visible";
-               this.visibleStateSearchbar = "invisible";
-               this.itemsCollectionHouse = this.afs.collection<House>('houses', ref => ref.where('garden', '==', this.gardenResult).orderBy('name'));
-               this.houses = this.itemsCollectionHouse.valueChanges();
-               console.log('houses ' + this.houses)
-             }*/
         }
+        this.searchHouses();
+    };
+    SearchPage.prototype.searchHouses = function () {
+        var _this = this;
+        var myArray = [];
+        var whereString;
+        // var query = firebase.firestore().collection('houses') as CollectionReference;
+        if (this.gardenResult == true || this.gardenResult == false) {
+            myArray.push('"garden", "==", ' + this.gardenResult);
+            //  query = query.where('garden', '==', true)
+        }
+        if (this.room_furnishedResult == true || this.room_furnishedResult == false) {
+            myArray.push('"room_furnished", "==", ' + this.room_furnishedResult);
+        }
+        if (this.pets_allowedResult == true || this.pets_allowedResult == false) {
+            myArray.push('"pets_allowed", "==", ' + this.pets_allowedResult);
+        }
+        for (var i = 0; i <= myArray.length; i++) {
+            whereString = whereString + ".where(myArray[i])";
+        }
+        var query = this.searchHouse.getHouses(whereString);
+        console.log('Query: ' + query);
+        query.get().then(function (querySnapshot) {
+            _this.houses = querySnapshot;
+        });
+        // var query = (firebase.firestore().collection('houses') + whereString) as CollectionReference;
+        /* query.where('', '==', '')
+         console.log('query:  ' + query);*/
+        /*  query.get().then(querySnapshot => {
+            this.houses = querySnapshot
+          });*/
+        this.visibleStateButton = "visible";
+        this.visibleStateSearchbar = "invisible";
     };
     SearchPage.prototype.searchAgain = function () {
         this.visibleStateButton = "invisible";
@@ -585,16 +555,51 @@ var SearchPage = /** @class */ (function () {
                 ])
             ]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__["a" /* AngularFirestore */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__shared_service_search_house__["a" /* SearchHouseService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_service_search_house__["a" /* SearchHouseService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */]) === "function" && _e || Object])
     ], SearchPage);
     return SearchPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=search.js.map
 
 /***/ }),
 
-/***/ 322:
+/***/ 321:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchHouseService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_app__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase_app__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var SearchHouseService = /** @class */ (function () {
+    function SearchHouseService() {
+    }
+    SearchHouseService.prototype.getHouses = function (searchString) {
+        console.log('searchString: ' + searchString);
+        return (__WEBPACK_IMPORTED_MODULE_1_firebase_app__["firestore"]().collection('houses') + searchString);
+        //return firebase.firestore() + searchString;
+    };
+    SearchHouseService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])()
+    ], SearchHouseService);
+    return SearchHouseService;
+}());
+
+//# sourceMappingURL=search-house.js.map
+
+/***/ }),
+
+/***/ 323:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -606,8 +611,8 @@ var SearchPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase_app__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase_app__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__profile_profile__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__add_house_add_house__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__my_houses_my_houses__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__add_house_add_house__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__my_houses_my_houses__ = __webpack_require__(347);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_service_user_service__ = __webpack_require__(85);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -782,7 +787,7 @@ var ProfileOverviewPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 323:
+/***/ 324:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -792,7 +797,7 @@ var ProfileOverviewPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__add_house_extra_info_add_house_extra_info__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__add_house_extra_info_add_house_extra_info__ = __webpack_require__(325);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_service_add_house_service__ = __webpack_require__(197);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -944,7 +949,7 @@ var AddHousePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 324:
+/***/ 325:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -958,7 +963,7 @@ var AddHousePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_auth__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_firestore__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_storage__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_storage__ = __webpack_require__(326);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__shared_service_add_house_service__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared_service_user_service__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_firebase_app__ = __webpack_require__(69);
@@ -1293,7 +1298,7 @@ var AddHouseExtraInfoPage = /** @class */ (function () {
     };
     AddHouseExtraInfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-house-extra-info',template:/*ion-inline-start:"/Users/jonastorfs/Documents/Projecten/co-house-pwa/src/pages/add-house-extra-info/add-house-extra-info.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title (click)="navigateHome()">CO-HOUSE</ion-title>\n        <ion-buttons right>\n            <button class="add" (click)="add()">\n                <ion-icon name="add"></ion-icon>\n            </button>\n            <button class="addWebsite" (click)="add()">\n                <h5>ADD NEW HOUSE</h5>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <div class="addHouse">\n        <ion-slides class="imageSlider" pager>\n            <ion-slide [(ngModel)]="imagePaths" *ngFor="let imagePath of imagePaths">\n                <img class="img_card" src="data:image/jpg;base64,{{imagePath}}" />\n            </ion-slide>\n            <ion-slide (click)="addImages()">\n                <ion-icon name="add"></ion-icon>\n                <p>Voeg foto\'s toe van uw woning</p>\n            </ion-slide>\n        </ion-slides>\n\n        <div class="dropzone" \n     dropZone\n     (hovered)="toggleHover($event)"\n     (dropped)="startUpload($event)"\n     [class.hovering]="isHovering">\n\n     <h3>Voeg afbeeldingen toe van uw woning</h3>\n\n     <div class="file">\n        <label class="file-label">\n        <input class="file-input" multiple type="file" placeholder=" "(change)="fileChangeEvent($event)">\n        </label>\n      </div>\n</div>\n\n        <ion-label class="labelName">Geeft een korte titel voor de woning*</ion-label>\n        <ion-textarea maxLength=70 rows="2" class="nameDescription" [(ngModel)]="nameDescription" placeholder="Kamer te huur in gerenoveerd herenhuis. (max 70 karakters)"></ion-textarea>\n\n        <ion-label class="labelDescription">Geeft hier een beschrijving van de woning*</ion-label>\n        <ion-textarea rows="5" class="houseDescription" [(ngModel)]="houseDescription" placeholder="Geef een beschrijving van de woning"></ion-textarea>\n\n        <ion-label class="labelDescriptionResidents">Geeft hier een beschrijving van de inwoners</ion-label>\n        <ion-textarea rows="5" class="residentsDescription" [(ngModel)]="residentsDescription" placeholder="Geef een korte beschrijving van de huidige inwoners"></ion-textarea>\n\n        <ion-item>\n            <ion-label class="number_of_residentsLabel">Aantal inwoners:</ion-label>\n            <ion-input [(ngModel)]="number_of_residents" type="number" placeholder="Aantal inwoners"></ion-input>\n        </ion-item>\n\n\n        <ion-input text-center class="discountCodeInput" [(ngModel)]="discount_code"  (ngModelChange)="discount_code = $event.toLocaleUpperCase()"\n            size="30" maxlength="30" placeholder="Kortingsscode ingeven"></ion-input>\n        <ion-label text-center (click)="verifyDiscount()" class="discountCodeLabel">Code controleren</ion-label>\n        <ion-label placeholder=\'\' name=\'Discount not ok\' text-center class="discountCodeNotOK">{{discountCodeNotOK}}</ion-label>\n        <ion-label placeholder=\'\' name=\'Discount code ok \' text-center class="discountCodeOK">{{discountCodeOK}}</ion-label>\n\n        <div text-center class="button-layout">\n            <button ion-button color="primary" class="addHouseButton" outline round (click)="addCouHouse()">Bevestigen</button>\n        </div>\n\n        <div text-center class="button-layout">\n            <button ion-button color="primary" class="addHouseButtonWeb" outline round  (click)="checkPaymentWeb()">Bevestigen</button>\n        </div>\n\n        <ion-label text-wrap placeholder=\'\' name=\'Price for adding new house\' text-center class="priceLabel">Een nieuwe woning toevoegen kost {{price}} € en uw woning zal 3 maanden beschikbaar zijn.</ion-label>\n    </div>\n</ion-content>'/*ion-inline-end:"/Users/jonastorfs/Documents/Projecten/co-house-pwa/src/pages/add-house-extra-info/add-house-extra-info.html"*/
+            selector: 'page-add-house-extra-info',template:/*ion-inline-start:"/Users/jonastorfs/Documents/Projecten/co-house-pwa/src/pages/add-house-extra-info/add-house-extra-info.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title (click)="navigateHome()">CO-HOUSE</ion-title>\n        <ion-buttons right>\n            <button class="add" (click)="add()">\n                <ion-icon name="add"></ion-icon>\n            </button>\n            <button class="addWebsite" (click)="add()">\n                <h5>ADD NEW HOUSE</h5>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <div class="addHouse">\n        <ion-slides class="imageSlider" pager>\n            <ion-slide [(ngModel)]="imagePaths" *ngFor="let imagePath of imagePaths">\n                <img class="img_card" src="data:image/jpg;base64,{{imagePath}}" />\n            </ion-slide>\n            <ion-slide (click)="addImages()">\n                <ion-icon name="add"></ion-icon>\n                <p>Voeg foto\'s toe van uw woning</p>\n            </ion-slide>\n        </ion-slides>\n\n        <div class="dropzone" \n     dropZone\n     (hovered)="toggleHover($event)"\n     (dropped)="startUpload($event)"\n     [class.hovering]="isHovering">\n\n     <h3>Voeg afbeeldingen toe van uw woning</h3>\n\n     <div class="file">\n        <label class="file-label">\n        <input class="file-input" multiple type="file" placeholder=" "(change)="fileChangeEvent($event)">\n        </label>\n      </div>\n</div>\n\n        <ion-label class="labelName">Geeft een korte titel voor de woning*</ion-label>\n        <ion-textarea maxLength=70 rows="2" class="nameDescription" [(ngModel)]="nameDescription" placeholder="Kamer te huur in gerenoveerd herenhuis. (max 70 karakters)"></ion-textarea>\n\n        <ion-label class="labelDescription">Geeft hier een beschrijving van de woning*</ion-label>\n        <ion-textarea rows="5" class="houseDescription" [(ngModel)]="houseDescription" placeholder="Geef een beschrijving van de woning"></ion-textarea>\n\n        <ion-label class="labelDescriptionResidents">Geeft hier een beschrijving van de inwoners</ion-label>\n        <ion-textarea rows="5" class="residentsDescription" [(ngModel)]="residentsDescription" placeholder="Geef een korte beschrijving van de huidige inwoners"></ion-textarea>\n\n        <ion-item>\n            <ion-label class="number_of_residentsLabel">Aantal inwoners:</ion-label>\n            <ion-input [(ngModel)]="number_of_residents" type="number" placeholder="Aantal inwoners"></ion-input>\n        </ion-item>\n\n\n        <ion-input text-center class="discountCodeInput" [(ngModel)]="discount_code"  (ngModelChange)="discount_code = $event.toLocaleUpperCase()"\n            size="30" maxlength="30" placeholder="Kortingsscode ingeven"></ion-input>\n        <ion-label text-center (click)="verifyDiscount()" class="discountCodeLabel">Code controleren</ion-label>\n        <ion-label placeholder=\'\' name=\'Discount not ok\' text-center class="discountCodeNotOK">{{discountCodeNotOK}}</ion-label>\n        <ion-label placeholder=\'\' name=\'Discount code ok \' text-center class="discountCodeOK">{{discountCodeOK}}</ion-label>\n\n        <div text-center class="button-layout">\n            <button ion-button color="primary" class="addHouseButton" outline round (click)="addCouHouse()">Bevestigen</button>\n        </div>\n\n        <div text-center class="button-layout">\n            <button ion-button color="primary" class="addHouseButtonWeb" outline round  (click)="addCouHouseWeb()">Bevestigen</button>\n        </div>\n\n        <ion-label text-wrap placeholder=\'\' name=\'Price for adding new house\' text-center class="priceLabel">Een nieuwe woning toevoegen kost {{price}} € en uw woning zal 3 maanden beschikbaar zijn.</ion-label>\n    </div>\n</ion-content>'/*ion-inline-end:"/Users/jonastorfs/Documents/Projecten/co-house-pwa/src/pages/add-house-extra-info/add-house-extra-info.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_6_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_image_picker__["a" /* ImagePicker */], __WEBPACK_IMPORTED_MODULE_9__shared_service_add_house_service__["a" /* AddHouseService */], __WEBPACK_IMPORTED_MODULE_7_angularfire2_firestore__["a" /* AngularFirestore */], __WEBPACK_IMPORTED_MODULE_10__shared_service_user_service__["a" /* UserService */],
@@ -1306,7 +1311,7 @@ var AddHouseExtraInfoPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 346:
+/***/ 347:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1378,7 +1383,7 @@ var MyHouses = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 347:
+/***/ 348:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1453,13 +1458,13 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 348:
+/***/ 349:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(349);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(356);
 
 //import 'web-animations-js/web-animations.min';
 
@@ -1468,7 +1473,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 355:
+/***/ 356:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1477,39 +1482,41 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(396);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(397);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_search_search__ = __webpack_require__(299);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_profile_profile__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__ = __webpack_require__(298);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_houseDetail_houseDetail__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_register_register__ = __webpack_require__(593);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_add_house_add_house__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_add_house_extra_info_add_house_extra_info__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_test_test__ = __webpack_require__(594);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_profile_overview_profile_overview__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_my_houses_my_houses__ = __webpack_require__(346);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_directives_file_upload__ = __webpack_require__(595);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__angular_common__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_image_picker__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_shared_service_add_house_service__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_shared_service_user_service__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_angularfire2__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__environments_environment__ = __webpack_require__(596);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_angularfire2_firestore__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_angularfire2_storage__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_angularfire2_auth__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_payment_payment__ = __webpack_require__(597);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_register_register__ = __webpack_require__(594);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_add_house_add_house__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_add_house_extra_info_add_house_extra_info__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_test_test__ = __webpack_require__(595);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_profile_overview_profile_overview__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_my_houses_my_houses__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_directives_file_upload__ = __webpack_require__(596);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_shared_service_search_house__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_common__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_image_picker__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_shared_service_add_house_service__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_shared_service_user_service__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_angularfire2__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__environments_environment__ = __webpack_require__(597);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_angularfire2_firestore__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_angularfire2_storage__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_angularfire2_auth__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_payment_payment__ = __webpack_require__(598);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1582,14 +1589,14 @@ var AppModule = /** @class */ (function () {
                         { component: __WEBPACK_IMPORTED_MODULE_13__pages_add_house_add_house__["a" /* AddHousePage */], name: 'add-house', segment: 'add-house' },
                         { component: __WEBPACK_IMPORTED_MODULE_11__pages_houseDetail_houseDetail__["a" /* HouseDetailPage */], name: 'add-house-detial', segment: 'add-house-detail', defaultHistory: [__WEBPACK_IMPORTED_MODULE_13__pages_add_house_add_house__["a" /* AddHousePage */]] },
                         { component: __WEBPACK_IMPORTED_MODULE_17__pages_my_houses_my_houses__["a" /* MyHouses */], name: 'my-houses', segment: 'my-houses' },
-                        { component: __WEBPACK_IMPORTED_MODULE_30__pages_payment_payment__["a" /* PaymentPage */], name: 'payment', segment: 'payment' },
+                        { component: __WEBPACK_IMPORTED_MODULE_31__pages_payment_payment__["a" /* PaymentPage */], name: 'payment', segment: 'payment' },
                         { component: __WEBPACK_IMPORTED_MODULE_12__pages_register_register__["a" /* RegisterPage */], name: 'register', segment: 'register' }
                     ]
                 }),
-                __WEBPACK_IMPORTED_MODULE_25_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_26__environments_environment__["a" /* environmentDEV */].firebase),
-                __WEBPACK_IMPORTED_MODULE_27_angularfire2_firestore__["b" /* AngularFirestoreModule */],
-                __WEBPACK_IMPORTED_MODULE_29_angularfire2_auth__["b" /* AngularFireAuthModule */],
-                __WEBPACK_IMPORTED_MODULE_28_angularfire2_storage__["b" /* AngularFireStorageModule */] // imports firebase/storage only needed for storage features
+                __WEBPACK_IMPORTED_MODULE_26_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_27__environments_environment__["a" /* environmentDEV */].firebase),
+                __WEBPACK_IMPORTED_MODULE_28_angularfire2_firestore__["b" /* AngularFirestoreModule */],
+                __WEBPACK_IMPORTED_MODULE_30_angularfire2_auth__["b" /* AngularFireAuthModule */],
+                __WEBPACK_IMPORTED_MODULE_29_angularfire2_storage__["b" /* AngularFireStorageModule */] // imports firebase/storage only needed for storage features
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["c" /* IonicApp */]],
             entryComponents: [
@@ -1607,17 +1614,18 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_15__pages_test_test__["a" /* TestPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_27_angularfire2_firestore__["a" /* AngularFirestore */],
-                __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_28_angularfire2_firestore__["a" /* AngularFirestore */],
+                __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["d" /* IonicErrorHandler */] },
                 /* Line below is used to remove the # from the url, but this currently gives error: CANNOT GET when refreshing page.
                   Check again when hoting the app: https://forum.ionicframework.com/t/tutorial-removing-from-ionic-pwa/103950
                 {provide: LocationStrategy, useClass: PathLocationStrategy},*/
-                __WEBPACK_IMPORTED_MODULE_22__ionic_native_image_picker__["a" /* ImagePicker */],
-                __WEBPACK_IMPORTED_MODULE_23__pages_shared_service_add_house_service__["a" /* AddHouseService */],
-                __WEBPACK_IMPORTED_MODULE_24__pages_shared_service_user_service__["a" /* UserService */],
-                __WEBPACK_IMPORTED_MODULE_21__angular_common__["d" /* DatePipe */]
+                __WEBPACK_IMPORTED_MODULE_23__ionic_native_image_picker__["a" /* ImagePicker */],
+                __WEBPACK_IMPORTED_MODULE_24__pages_shared_service_add_house_service__["a" /* AddHouseService */],
+                __WEBPACK_IMPORTED_MODULE_25__pages_shared_service_user_service__["a" /* UserService */],
+                __WEBPACK_IMPORTED_MODULE_22__angular_common__["d" /* DatePipe */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_shared_service_search_house__["a" /* SearchHouseService */]
             ]
         })
     ], AppModule);
@@ -1628,7 +1636,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 396:
+/***/ 397:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1680,7 +1688,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 593:
+/***/ 594:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1825,7 +1833,7 @@ var RegisterPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 594:
+/***/ 595:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1881,7 +1889,7 @@ var TestPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 595:
+/***/ 596:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1954,7 +1962,7 @@ var DropZoneDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 596:
+/***/ 597:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1974,7 +1982,7 @@ var environmentDEV = {
 
 /***/ }),
 
-/***/ 597:
+/***/ 598:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2050,5 +2058,5 @@ var UserService = /** @class */ (function () {
 
 /***/ })
 
-},[348]);
+},[349]);
 //# sourceMappingURL=main.js.map

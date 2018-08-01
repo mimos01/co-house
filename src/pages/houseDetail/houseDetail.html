@@ -51,8 +51,8 @@
             <ul text-wrap class="extra-info">
                 <li *ngIf="house.garden"> Woning met tuin</li>
                 
-                <li *ngIf="house.only_female"> Alleen vrouwen gezocht</li>
-                <li *ngIf="house.only_male"> Alleen mannen gezocht</li>
+                <li *ngIf="house.icons == 'female_only'"> Alleen vrouwen gezocht</li>
+                <li *ngIf="house.icons == 'male_only'"> Alleen mannen gezocht</li>
                 
                 <li> Gezochte leeftijd: {{house.age_from}} tot {{house.age_to}} jaar</li>
                 <li> Aantal inwoners: {{house.number_of_residents}}</li>

@@ -14,15 +14,9 @@ import { AddHouseService } from '../shared-service/add-house.service';
 import { UserService } from '../shared-service/user.service';
 import * as firebase from 'firebase/app';
 
-export interface DiscountCode {
-  code: string;
-  valid: boolean;
-}
-
-export interface City {
-  country: string;
-  name_nl: string;
-}
+//import { House} from '../interfaces/house';
+import { City } from '../interfaces/city';
+import { DiscountCode } from '../interfaces/discountCode';
 
 export interface House {
   province: string;

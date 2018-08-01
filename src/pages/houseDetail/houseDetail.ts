@@ -5,24 +5,7 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 
-export interface House {
-  id: string;
-  name: string;
-  description: string;
-  province: string;
-  city: string;
-  age_from: number;
-  age_to: number;
-  garden: boolean;
-  number_of_residents: number;
-  only_female: boolean;
-  only_male: boolean;
-  smoker_allowed: boolean;
-  price_month: number;
-  residents: string;
-  pets_allowed: boolean;
-  images: object;
-}
+import { House } from '../interfaces/house';
 
 @IonicPage({
   segment: 'detail/:homeId'

@@ -5,32 +5,11 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 
-import * as firebase from 'firebase/app';
-import { CollectionReference } from '../../../node_modules/@firebase/firestore-types';
+import { City } from '../interfaces/city';
+import { House } from '../interfaces/house';
 
-export interface City {
-  id: string;
-  name: string;
-  country: string;
-}
-
-export interface House {
-  id: string;
-  name: string;
-  description: string;
-  province: string;
-  city: string;
-  age_from: number;
-  age_to: number;
-  garden: boolean;
-  number_of_residents: number;
-  only_female: boolean;
-  only_male: boolean;
-  smoker_allowed: boolean;
-  price_month: number;
-  residents: string;
-  pets_allowed: boolean;
-}
+import { SearchHouseService } from '../shared-service/search-house';
+import { QuerySnapshot } from '../../../node_modules/@firebase/firestore-types';
 
 export class Garden {
 
@@ -96,7 +75,7 @@ export class SearchPage implements OnInit {
   visibleStateSearchbar = "visible";
   visibleStateButton = "invisible";
 
-  constructor(public navCtrl: NavController, public afs: AngularFirestore, public alertCtrl: AlertController, private app: App) {
+  constructor(public searchHouse: SearchHouseService, public navCtrl: NavController, public afs: AngularFirestore, public alertCtrl: AlertController, private app: App) {
     this.itemsCollectionCity = this.afs.collection<City>('cities', ref => ref.where('country', '==', 'BE').orderBy('name_nl'));
     this.cities = this.itemsCollectionCity.valueChanges();
 
@@ -178,86 +157,49 @@ export class SearchPage implements OnInit {
           console.log('Pets allowed:' + this.pets_allowedResult);
       }
 
-      var myArray = [];
-      var whereString;
-     // var query = firebase.firestore().collection('houses') as CollectionReference;
+    
+    }
+    this.searchHouses();
+  }
 
-      if (this.gardenResult == true || this.gardenResult == false) {
-        myArray.push('"garden", "==", ' + this.gardenResult);
-     //  query = query.where('garden', '==', true)
-      }
-      if (this.room_furnishedResult == true || this.room_furnishedResult == false) {
-        myArray.push('"room_furnished", "==", ' + this.room_furnishedResult);
-      }
-      if (this.pets_allowedResult == true || this.pets_allowedResult == false) {
-        myArray.push('"pets_allowed", "==", ' + this.pets_allowedResult);
-      }
+  searchHouses() {
+    var myArray = [];
+    var whereString;
+    // var query = firebase.firestore().collection('houses') as CollectionReference;
 
-      for (var i = 0; i <= myArray.length; i++) {
-        whereString = whereString + ".where(myArray[i])"
-      }
+    if (this.gardenResult == true || this.gardenResult == false) {
+      myArray.push('"garden", "==", ' + this.gardenResult);
+      //  query = query.where('garden', '==', true)
+    }
+    if (this.room_furnishedResult == true || this.room_furnishedResult == false) {
+      myArray.push('"room_furnished", "==", ' + this.room_furnishedResult);
+    }
+    if (this.pets_allowedResult == true || this.pets_allowedResult == false) {
+      myArray.push('"pets_allowed", "==", ' + this.pets_allowedResult);
+    }
 
-      var query = (firebase.firestore().collection('houses') + whereString) as CollectionReference;
+    for (var i = 0; i <= myArray.length; i++) {
+      whereString = whereString + ".where(myArray[i])"
+    }
 
-      console.log('Firebase collection string: ' + firebase.firestore().collection('houses') + whereString);
-      console.log('query: ' + query)
+    var query = this.searchHouse.getHouses(whereString);
+    console.log('Query: ' + query);
+
+    query.get().then(querySnapshot => {
+      this.houses = querySnapshot
+    })
+
+   // var query = (firebase.firestore().collection('houses') + whereString) as CollectionReference;
 
    
-      query.where('','==','')
-      console.log('query:  ' + query);
+   /* query.where('', '==', '')
+    console.log('query:  ' + query);*/
     /*  query.get().then(querySnapshot => {
         this.houses = querySnapshot
       });*/
 
-      this.visibleStateButton = "visible";
-      this.visibleStateSearchbar = "invisible";
-
-      // this.itemsCollectionHouse = this.afs.collection<House>('houses', ref => ref.where('garden','==', true));
-      // this.houses = this.itemsCollectionHouse.valueChanges();
-
-      console.log('houses: ' + this.houses)
-      //console.log('houses : ' + this.houses)
-      //this.houses = this.itemsCollectionHouse.valueChanges();
-
-      /*  this.itemsCollectionH ouse = this.afs.collection<House>('houses', ref => ref
-        .orderBy('name'));
-  
-        this.houses = this.itemsCollectionHouse.valueChanges();*/
-
-      /* if (this.gardenResult == undefined && this.room_furnishedResult == undefined && this.pets_allowedResult == undefined) {
-         this.itemsCollectionHouse = this.afs.collection<House>('houses', ref => ref.where('garden', '==', true)
-           .where('garden', '==', false)
-           .where('room_furnished', '==', true)
-           .where('room_furnished', '==', false)
-           .where('pets_allowed', '==', true)
-           .where('pets_allowed', '==', false)
-           .orderBy('name'));
-         this.houses = this.itemsCollectionHouse.valueChanges();
- 
-         console.log("Query for undefined");
- 
-         this.visibleStateButton = "visible";
-         this.visibleStateSearchbar = "invisible";
-       }*/
-
-
-
-      //Als query volledig werkt, subscribe op resultaat om te zien of er iets terug gekomen is of niet!!! 
-      //Anders in UI melding geven dat er geen woning is gevonden. 
-
-      /* if (this.gardenResult === true || this.gardenResult === false && this.room_furnishedResult === true || this.room_furnishedResult === false
-         && this.pets_allowedResult === true || this.pets_allowedResult === false && this.smokers === true || this.smokers === false) {
-         this.garden = '';
-         console.log('Query house ');
-         //this.showSearchBar = false;
-         this.visibleStateButton = "visible";
-         this.visibleStateSearchbar = "invisible";
-         this.itemsCollectionHouse = this.afs.collection<House>('houses', ref => ref.where('garden', '==', this.gardenResult).orderBy('name'));
-         this.houses = this.itemsCollectionHouse.valueChanges();
-         console.log('houses ' + this.houses)
-       }*/
-
-    }
+    this.visibleStateButton = "visible";
+    this.visibleStateSearchbar = "invisible";
   }
 
   searchAgain() {

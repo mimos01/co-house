@@ -13,24 +13,7 @@ import { MyHouses } from '../my-houses/my-houses';
 
 import { UserService } from '../shared-service/user.service';
 
-export interface House {
-  id: string;
-  name: string;
-  description: string;
-  province: string;
-  city: string;
-  age_from: number;
-  age_to: number;
-  garden: boolean;
-  number_of_residents: number;
-  only_female: boolean;
-  only_male: boolean;
-  smoker_allowed: boolean;
-  price_month: number;
-  residents: string;
-  pets_allowed: boolean;
-  images: object;
-}
+import { House } from '../interfaces/house';
 
 @IonicPage({
   segment: 'profile-overview'

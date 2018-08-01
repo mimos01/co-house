@@ -20,6 +20,8 @@ import { ProfileOverviewPage } from '../pages/profile-overview/profile-overview'
 import { MyHouses } from '../pages/my-houses/my-houses';
 import { DropZoneDirective } from '../pages/directives/file-upload';
 
+import { SearchHouseService } from '../pages/shared-service/search-house';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -110,7 +112,8 @@ import { PaymentPage } from '../pages/payment/payment';
     ImagePicker,
     AddHouseService,
     UserService,
-    DatePipe
+    DatePipe,
+    SearchHouseService
   ]
 })
 export class AppModule {}

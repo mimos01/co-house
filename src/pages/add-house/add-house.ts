@@ -9,28 +9,8 @@ import { AddHouseExtraInfoPage } from '../add-house-extra-info/add-house-extra-i
 
 import { AddHouseService } from '../shared-service/add-house.service';
 
-export interface City {
-    id: string;
-    name: string;
-    country: string;
-}
-
-export interface House {
-    id: string;
-    name: string;
-    description: string;
-    province: string;
-    city: string;
-    age_from: number;
-    age_to: number;
-    garden: boolean;
-    only_female: boolean;
-    only_male: boolean;
-    smoker_allowed: boolean;
-    price_month: number;
-    residents: string;
-    pets_allowed: boolean;
-}
+import { House } from '../interfaces/house';
+import { City } from '../interfaces/city';
 
 export class Garden {
 
